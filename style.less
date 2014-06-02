@@ -1,0 +1,153 @@
+body{
+  font-family: 'Nobile', Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 25px;
+
+  h3{
+    font-family: 'Corben', Georgia, Times, serif;
+    font-size: 30px;
+  }
+}
+
+.logo{
+  position: absolute;
+  top:4px;
+  left:11px;
+  color:maroon;
+}
+
+.sidebar{
+  top:80px;
+  width:300px;
+  height: auto;
+  float: left;
+  margin-right: 4px;
+  z-index: 2;
+  position: absolute;
+
+  .menuItem{
+    background-color: #FFF;
+    position: relative;
+    opacity: 0;
+    width:276px;
+    height: 38px;
+    font-size: 14px;
+    color:darkcyan;
+    border: 1px solid #333333;
+    padding:10px;
+    margin-bottom: 4px;
+    cursor:pointer;
+    transition: background 0.2s linear;
+    -moz-transition: background 0.2s linear;    /* FF3.7+ */
+    -o-transition: background 0.2s linear;      /* Opera 10.5 */
+    -webkit-transition: background 0.2s linear; /* Saf3.2+, Chrome */
+
+    &.selected{
+      background-color: #009E9E;
+      color:#FFF;
+    }
+
+    &:hover{
+      background-color:darkcyan;
+      color:#FFF;
+    }
+  }
+}
+
+.mainContent{
+  a{
+    color: maroon;
+    text-decoration: none;
+  }
+
+  small{
+    line-height: 15px;
+  }
+
+  margin-left:320px;
+  z-index: 1;
+  opacity:0;
+  background-color: #fff;
+  width:800px;
+  float: left;
+  padding: 10px 20px;
+  color:#333333;
+  min-height: 600px;
+  position: relative;
+  overflow: hidden;
+
+  .page{
+
+    opacity: 0;
+
+    h3{
+      font-size: 18px;
+      text-shadow: 1px 0px 1px rgba(255, 255, 255, 1);
+      color:darkcyan;
+    }
+
+    h2{
+      color:maroon;
+      text-shadow: 1px 0px 1px rgba(255, 255, 255, 1);
+      font-size: 22px;
+    }
+
+    .columns1{
+      justify-content: space-between;
+      color:maroon;
+      width:100%;
+      margin-top: 25px;
+
+    }
+
+    .columns2{
+      color:maroon;
+      float: left;
+      margin-top: 25px;
+      width:48%;
+
+      &.first{
+        padding-right: 2%;
+      }
+      &.second{
+        padding-left: 2%;
+      }
+    }
+  }
+
+  .contentLoader{
+    width:100%;
+    overflow: hidden;
+    height:600px;
+    top:0px;
+    left:0;
+    height: 80%;
+    position: absolute;
+    padding-top: 20%;
+    text-align: center;
+    background-color: #fff;
+    position: absolute;
+    z-index: 4;
+
+    &.hdn{
+      display: none;
+    }
+  }
+}
+
+#loader{
+  font-size: 38px;
+  position: absolute;
+  z-index: 2;
+  font-family: 'Source Sans Pro', sans-serif;
+  width:100%;
+  height: 80%;
+  padding-top: 20%;
+  background-color: #FFF;
+
+  div{
+    width: 100%;
+    text-align: center;
+  }
+}
+
