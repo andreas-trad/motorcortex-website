@@ -1,0 +1,244 @@
+<h2>1. Graphs</h2>
+
+<h3>HTML</h3>
+<pre class="html"><code>
+     &lt;div class=&quot;contents&quot;&gt;
+        &lt;div class=&quot;bar&quot;&gt;
+            &lt;div class=&quot;number&quot; data-duration=&quot;150&quot;&gt;25%&lt;/div&gt;
+            &lt;div class=&quot;percentage&quot;  data-percentage=&quot;25%&quot; data-duration=&quot;150&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;bar&quot;&gt;
+            &lt;div class=&quot;number&quot; data-duration=&quot;300&quot;&gt;39%&lt;/div&gt;
+            &lt;div class=&quot;percentage&quot;  data-percentage=&quot;39%&quot; data-duration=&quot;300&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;bar&quot;&gt;
+            &lt;div class=&quot;number&quot; data-duration=&quot;450&quot;&gt;65%&lt;/div&gt;
+            &lt;div class=&quot;percentage&quot;  data-percentage=&quot;55%&quot; data-duration=&quot;450&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;bar&quot;&gt;
+            &lt;div class=&quot;number&quot; data-duration=&quot;600&quot;&gt;90%&lt;/div&gt;
+            &lt;div class=&quot;percentage&quot;  data-percentage=&quot;90%&quot; data-duration=&quot;600&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;bar&quot;&gt;
+            &lt;div class=&quot;number&quot; data-duration=&quot;750&quot;&gt;55%&lt;/div&gt;
+            &lt;div class=&quot;percentage&quot;  data-percentage=&quot;55%&quot; data-duration=&quot;750&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;bar&quot;&gt;
+            &lt;div class=&quot;number&quot; data-duration=&quot;850&quot;&gt;47%&lt;/div&gt;
+            &lt;div class=&quot;percentage&quot;  data-percentage=&quot;47%&quot; data-duration=&quot;850&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;bar&quot;&gt;
+            &lt;div class=&quot;number&quot; data-duration=&quot;950&quot;&gt;25%&lt;/div&gt;
+            &lt;div class=&quot;percentage&quot;  data-percentage=&quot;25%&quot; data-duration=&quot;950&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;bar&quot;&gt;
+            &lt;div class=&quot;number&quot; data-duration=&quot;1020&quot;&gt;11%&lt;/div&gt;
+            &lt;div class=&quot;percentage&quot;  data-percentage=&quot;11%&quot; data-duration=&quot;1020&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;bar&quot;&gt;
+            &lt;div class=&quot;number&quot; data-duration=&quot;1090&quot;&gt;69%&lt;/div&gt;
+            &lt;div class=&quot;percentage&quot;  data-percentage=&quot;69%&quot; data-duration=&quot;1090&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;bar&quot;&gt;
+            &lt;div class=&quot;biggest number&quot; data-duration=&quot;1150&quot;&gt;100%&lt;/div&gt;
+            &lt;div class=&quot;percentage&quot;  data-percentage=&quot;100%&quot; data-duration=&quot;1150&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+</code></pre>
+
+<h3>MSS</h3>
+<pre class="css"><code>
+.bar:showBars{
+    .percentage{
+        delay:@domel.data-duration;
+        duration:1000;
+        backgroundColorBlue:@domel.data-percentage;
+        backgroundColorGreen:@domel.data-percentage;
+        height: @domel.data-percentage;
+    }
+    .number{
+        rotateX:180deg;
+        duration:0;
+        complete{
+            delay:@domel.data-duration;
+            duration:1000;
+            opacity:1;
+            rotateX:360deg;
+        }
+    }
+}
+
+.biggest.number:highlight{
+    boxShadowBlur:2em;
+
+    backgroundColorRed:100%;
+    backgroundColorBlue:100%;
+    backgroundColorGreen:100%;
+
+    duration:100;
+    complete{
+        backgroundColorRed:0;
+        backgroundColorBlue:63;
+        backgroundColorGreen:63;
+
+        colorRed:100%;
+        colorGreen:100%;
+        colorBlue:100%;
+
+        duration:100;
+    }
+
+    loop:6;
+}
+</code></pre>
+
+<h3>javascript</h3>
+<pre class="javascript"><code>
+var mc = new MotroCortex();
+mc.loadMSS('./mc.mss', function(){
+    mc.trigger("showBars", function(){
+        mc.trigger('highlight');
+    });
+});
+</code></pre>
+
+<h3>Result</h3>
+<div class="exampleContainer graphsExample"></div>
+<div class="graphs examplebutton">Run</div>
+
+<h2>2. Menu items</h2>
+   <h3>HTML</h3>
+<pre class="html"><code>
+     &lt;div class=&quot;listContainer&quot;&gt;
+        &lt;div class=&quot;listitem&quot; data-delay=&quot;75&quot;&gt;
+            Lorem ipsum dolor sit amet, consectetur
+        &lt;/div&gt;
+        &lt;div class=&quot;listitem&quot; data-delay=&quot;150&quot;&gt;
+            Lorem ipsum dolor sit amet, consectetur
+        &lt;/div&gt;
+        &lt;div class=&quot;listitem&quot; data-delay=&quot;225&quot;&gt;
+            Lorem ipsum dolor sit amet, consectetur
+        &lt;/div&gt;
+        &lt;div class=&quot;listitem&quot; data-delay=&quot;300&quot;&gt;
+            Lorem ipsum dolor sit amet, consectetur
+        &lt;/div&gt;
+        &lt;div class=&quot;listitem&quot; data-delay=&quot;375&quot;&gt;
+            Lorem ipsum dolor sit amet, consectetur
+        &lt;/div&gt;
+        &lt;div class=&quot;listitem&quot; data-delay=&quot;450&quot;&gt;
+            Lorem ipsum dolor sit amet, consectetur
+        &lt;/div&gt;
+        &lt;div class=&quot;listitem&quot; data-delay=&quot;525&quot;&gt;
+            Lorem ipsum dolor sit amet, consectetur
+        &lt;/div&gt;
+        &lt;div class=&quot;listitem&quot; data-delay=&quot;600&quot;&gt;
+            Lorem ipsum dolor sit amet, consectetur
+        &lt;/div&gt;
+        &lt;div class=&quot;listitem&quot; data-delay=&quot;675&quot;&gt;
+            Lorem ipsum dolor sit amet, consectetur
+        &lt;/div&gt;
+        &lt;div class=&quot;listitem&quot; data-delay=&quot;750&quot;&gt;
+            Lorem ipsum dolor sit amet, consectetur
+        &lt;/div&gt;
+    &lt;/div&gt;
+</code></pre>
+
+<h3>MSS</h3>
+<pre class="css"><code>
+.listContainer .listitem:not(triggeringElement):click{
+    -.:x-active;
+    duration:300;
+    delay:@domel.data-delay;
+    opacity:0.5;
+    scale:0.8;
+    easingeaseOutBack;
+    backgroundColorRed:245;
+    backgroundColorGreen:245;
+    backgroundColorBlue:245;
+    translateX:-@rand(240, 290)px;
+    boxShadowBlur:0em;
+}
+
+
+.listContainer .listitem:triggeringElement:click{
+    +.:x-active;
+    duration:300;
+    scale:1;
+    opacity:1;
+    easing:easeOutBack;
+    backgroundColorRed:245;
+    backgroundColorGreen:245;
+    backgroundColorBlue:245;
+    translateX:100px;
+    complete{
+        duration:1000;
+        boxShadowBlur:1em;
+    }
+}
+
+.listContainer .listitem:unclick{
+    -.:x-active;
+    duration:300;
+    scale:1;
+    opacity:1;
+    delay:@domel.data-delay;
+    easing:easeOutBack;
+    backgroundColorRed:255;
+    backgroundColorGreen:255;
+    backgroundColorBlue:255;
+    translateX:0px;
+    boxShadowBlur:0em;
+}
+</code></pre>
+
+<h3>javascript</h3>
+<pre class="javascript"><code>
+var mc = new MotroCortex({
+    debug:true
+});
+mc.loadMSS('./mc.mss', function(){
+    if(!$(this).hasClass('x-active')){
+        mc.trigger('click', e);
+    } else {
+        mc.trigger('unclick', e);
+    }
+
+});
+</code></pre>
+
+<h3>Result</h3>
+<div class="exampleContainer menuExample">
+    <div class="listContainer">
+        <div class="listitem" data-delay="75">
+            Lorem ipsum dolor sit amet, consectetur
+        </div>
+        <div class="listitem" data-delay="150">
+            Lorem ipsum dolor sit amet, consectetur
+        </div>
+        <div class="listitem" data-delay="225">
+            Lorem ipsum dolor sit amet, consectetur
+        </div>
+        <div class="listitem" data-delay="300">
+            Lorem ipsum dolor sit amet, consectetur
+        </div>
+        <div class="listitem" data-delay="375">
+            Lorem ipsum dolor sit amet, consectetur
+        </div>
+        <div class="listitem" data-delay="450">
+            Lorem ipsum dolor sit amet, consectetur
+        </div>
+        <div class="listitem" data-delay="525">
+            Lorem ipsum dolor sit amet, consectetur
+        </div>
+        <div class="listitem" data-delay="600">
+            Lorem ipsum dolor sit amet, consectetur
+        </div>
+        <div class="listitem" data-delay="675">
+            Lorem ipsum dolor sit amet, consectetur
+        </div>
+        <div class="listitem" data-delay="750">
+            Lorem ipsum dolor sit amet, consectetur
+        </div>
+    </div>;
+</div>
+<small>Click on any menu item of the example</small>

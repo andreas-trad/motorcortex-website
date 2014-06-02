@@ -219,7 +219,8 @@ With the nested elements capability provided by MotorCortex you can just write:
         top:+=300px;
 
         img{
-            /* no need to redefine the duration property. It is inherited from the parent */
+            /* no need to redefine the duration property.
+            It is inherited from the parent */
             rotateZ:90deg;
         }
     }
@@ -247,8 +248,10 @@ The following MSS code has been written in a way that expects for these dynamic 
 <br/>
 <pre class="css"><code>
     .section:myEvent{
-    duration:@params.duration;
-    top:+=(@params.top)px; /* always put in parenthesis dynamic variables (both @globals.xxx and @params.xxx) when you want to follow them by the "px" units */
+        duration:@params.duration;
+        top:+=(@params.top)px; /* always put in parenthesis dynamic variables
+        (both @globals.xxx and @params.xxx) when you want
+        to follow them by the "px" units */
     }
 </code></pre><br/>
 As you can see in the example we've put in parenthesis the @params.top variable. This is because without the parenthesis the code would look like this:
@@ -257,7 +260,8 @@ As you can see in the example we've put in parenthesis the @params.top variable.
 <pre class="css"><code>
     .section:myEvent{
         duration:@params.duration;
-        top:+=@params.toppx; /* no way to make clear where the param name ends end if the "px" is part of it or represents the units */
+        top:+=@params.toppx; /* no way to make clear where the param name
+        ends end if the "px" is part of it or represents the units */
     }
 </code></pre><br/>
 As you can see there is no way to separate the @params.top from the "px" units. This is why and when you should use parentheses when
@@ -283,7 +287,8 @@ Let's consider the following example:
 <pre class="css"><code>
     .section:myEvent{
         delay:@domel.data-delay;
-        top:+=(@domel.data-top)px; /* always put in parenthesis dynamic variables (both @globals.xxx and @params.xxx) when you want to follow them by the "px" units */
+        top:+=(@domel.data-top)px; /* always put in parenthesis dynamic variables (both
+        @globals.xxx and @params.xxx) when you want to follow them by the "px" units */
     }
 </code></pre><br/>
 As you can see in the MSS code we've used the @domel.delay and @domel.top directives for the value assignment to the delay and top variables.
