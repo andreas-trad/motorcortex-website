@@ -24,6 +24,12 @@ define(
             var tmpl = _.template(templateLoadResult.data);
             $("." + divClass).html(tmpl({}));
         };
+
+        var applyBannerTemplateToDiv = function(templateName, divClass){
+            var templateLoadResult = TemplateLoader.loadTemplate(templateName, 'banners');
+            var tmpl = _.template(templateLoadResult.data);
+            $("." + divClass).html(tmpl({}));
+        };
 		
 		var applyTemplateToMainDiv = function(templateName, pageTitle, mc){
             mc.trigger('fadeContentsOut');
@@ -47,7 +53,7 @@ define(
 
 		return {
 			init: function(){
-                var mc = new window.MotroCortex();
+                var mc = new window.MotroCortex({debug:true});
                 mc.loadMSS('./mc.mss', function(){
                     mc.trigger('start', function(){
                         routie({
@@ -56,6 +62,9 @@ define(
 
                                 applyTemplateToMainDiv('home', 'Home', mc);
                                 mc.trigger('aclick', {target:document.getElementsByClassName('home')});
+
+                                applyBannerTemplateToDiv('homePage', 'banner');
+                                mc.trigger('animate');
                             }, // 'dashboard':function
                             'concept':function(){
                                 Resetter.attachTo('.navbar-header');

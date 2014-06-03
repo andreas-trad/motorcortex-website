@@ -207,3 +207,73 @@ body h3 {
   border: 1px solid #2d6987;
   cursor: pointer;
 }
+.banner {
+  font-family: 'Nobile', Helvetica, Arial, sans-serif;
+  width: 789px;
+  height: 350px;
+  position: relative;
+  overflow: hidden;
+}
+.banner .divsContainer {
+  width: 820px;
+  height: 350px;
+  position: absolute;
+  z-index: 1;
+}
+.banner .divsContainer .whiteRow {
+  width: 45px;
+  height: 350px;
+  float: left;
+}
+.banner .divsContainer .whiteRow .actualWhite {
+  width: 0;
+  background-color: #FFF;
+  height: 350px;
+}
+.banner .text {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  text-align: center;
+  left: 800px;
+  top: 150px;
+}
+.banner .text.st3 {
+  opacity: 0;
+  left: 0;
+  color: #FFF;
+}
+.banner .text.st4 {
+  opacity: 0;
+  left: 0;
+}
+.banner .text.st4 .slight {
+  opacity: 0;
+  color: #FFF;
+}
+.banner .text.st5 {
+  top: 30px;
+  font-size: 34px;
+  color: #FFF;
+}
+.banner .text.st6 {
+  top: 80;
+  font-size: 34px;
+  color: #FFF;
+}
+.banner .text.st6 a {
+  color: #FFF;
+}
+.banner .text1 {
+  color: darkcyan;
+  font-size: 38px;
+}
+.banner .text2 {
+  color: maroon;
+  font-size: 30px;
+}
+.banner .text3 {
+  font-family: 'Corben', Georgia, Times, serif;
+  color: maroon;
+  font-size: 28px;
+}
