@@ -273,6 +273,7 @@
 .banner:animate7{
     delay:1000;
     .one{
+        delay:0;
         colorRed:255;
         colorGreen:255;
         colorBlue:255;
@@ -284,7 +285,7 @@
         }
     }
     .slight{
-        delay:800;
+        delay:1400;
         opacity: 0;
         duration:1000;
     }
@@ -296,7 +297,7 @@
         colorBlue:255;
         duration:300;
         complete{
-            delay:350;
+            delay:950;
             opacity:0;
             duration:1000;
         }
