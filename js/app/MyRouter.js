@@ -7,6 +7,15 @@ define(
     ],
 	
 	function(TemplateLoader, Resetter, MotorCortex) {
+        mc.trigger('scaleBanner', {
+            by:800*0.9/$(window).width()
+        });
+        $(window).resize(function(){
+            mc.trigger('scaleBanner', {
+                by:800*0.9/$(window).width()
+            });
+        });
+
 		var checkCredentialsOnCallback = function(data){
 			if(data.credentialsError){
 				alert('Credentials error occured!');

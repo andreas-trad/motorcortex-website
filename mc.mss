@@ -1,3 +1,8 @@
+.banner:scaleBanner{
+    duration:0;
+    scale:@params.by;
+}
+
 #loader:start{
     rotateY:90deg;
     duration:1000;
