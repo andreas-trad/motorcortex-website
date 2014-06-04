@@ -2,6 +2,9 @@
     rotateY:90deg;
     duration:1000;
     opacity:0;
+    complete{
+        +.:hdn;
+    }
 }
 
 .side-about:start{

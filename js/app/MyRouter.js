@@ -32,6 +32,11 @@ define(
         };
 		
 		var applyTemplateToMainDiv = function(templateName, pageTitle, mc){
+            ga('send', {
+                'hitType': 'pageview',
+                'page': '/' + templateName,
+                'title': pageTitle
+            });
             mc.trigger('aclick', {target:document.getElementsByClassName(templateName)});
             mc.trigger('fadeContentsOut');
 

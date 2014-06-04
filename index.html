@@ -8,6 +8,18 @@
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
     <link href="http://fonts.googleapis.com/css?family=Corben:bold" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Nobile" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="user-scalable = no">
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-51641043-1', 'motorcortexjs.com');
+        //ga('send', 'pageview');
+
+    </script>
 
     <script data-main="./js/requires" src="./js/require.js"></script>
 </head>
@@ -16,6 +28,9 @@
         <h3>MotorCortex.js</h3>
         <small>version: 0.1.0</small>
     </div>
+    <div class="sidebarContainer">
+
+    </div>
     <div class="sidebar">
         <div class="menuItem home" data-goesTo="" data-delay="50">Home</div>
         <div class="menuItem concept" data-goesTo="concept" data-delay="120">Concept</div>
@@ -23,16 +38,9 @@
         <div class="menuItem examples" data-goesTo="examples" data-delay="260">Examples</div>
         <div class="menuItem blog" data-goesTo="blog" data-delay="330">Blog</div>
         <div class="menuItem about" data-goesTo="about" data-delay="400">About / Contact</div>
-        <a href="https://github.com/andreas-trad/motorcortexjs" target="blank"><div class="menuItem download" data-goesTo="download" data-delay="470">Download on Github</div></a>
+        <a href="https://github.com/andreas-trad/motorcortexjs" target="_blank"><div class="menuItem download" data-goesTo="download" data-delay="470">Download on Github</div></a>
     </div>
 
-    <div class="side-about">
-        <small>
-        Copyright 2014, Andreas Trantidis <br/>
-        atrantidis at gmail dot com <br/>
-        Released under the <a href="http://sam.zoy.org/wtfpl/" target="_blank">WTFPL license</a><br/>
-        </small>
-    </div>
 
     <div class="mainContent">
         <div class="page"></div>
@@ -42,6 +50,18 @@
     <div id="loader">
         <div>MotorCortex.js</div>
         <div><img src="./images/loader.gif"></div>
+    </div>
+
+    <div class="side-about">
+        <small>
+            Copyright 2014, Andreas Trantidis <br/>
+            atrantidis at gmail dot com <br/>
+            Released under the <a href="http://sam.zoy.org/wtfpl/" target="_blank">WTFPL license</a><br/>
+        </small>
+        <div class="github-buttons">
+            <iframe src="http://ghbtns.com/github-btn.html?user=andreas-trad&repo=motorcortexjs&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="80px" height="20px"></iframe>
+            <iframe src="http://ghbtns.com/github-btn.html?user=andreas-trad&repo=motorcortexjs&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="80px" height="20px"></iframe>
+        </div>
     </div>
 </body>
 </html>
