@@ -41,16 +41,17 @@ body h3 {
   .sidebar {
     position: relative;
     float: left;
-    width: 100%;
+    width: 90%;
     top: 15px;
   }
   .sidebar .menuItem {
     width: 95%;
   }
   .mainContent {
-    width: 95%;
+    width: 96%;
     float: left;
     margin-top: 80px;
+    padding: 2%;
   }
   .columns1,
   .columns2 {
@@ -112,6 +113,7 @@ body h3 {
   .mainContent {
     width: 800px;
     margin-left: 320px;
+    padding: 10px 20px;
   }
   .columns1 {
     justify-content: space-between;
@@ -173,14 +175,13 @@ body h3 {
   color: #FFF;
 }
 .mainContent {
+  position: relative;
   z-index: 1;
   opacity: 0;
   background-color: #fff;
   float: left;
-  padding: 10px 20px;
   color: #333333;
   min-height: 600px;
-  position: relative;
   overflow: hidden;
 }
 .mainContent a {
