@@ -12,7 +12,10 @@
     <script data-main="./js/requires" src="./js/require.js"></script>
 </head>
 <body>
-    <div class="logo"><h3>MotorCortex.js</h3></div>
+    <div class="logo">
+        <h3>MotorCortex.js</h3>
+        <small>version: 0.1.0</small>
+    </div>
     <div class="sidebar">
         <div class="menuItem home" data-goesTo="" data-delay="50">Home</div>
         <div class="menuItem concept" data-goesTo="concept" data-delay="120">Concept</div>
@@ -20,7 +23,17 @@
         <div class="menuItem examples" data-goesTo="examples" data-delay="260">Examples</div>
         <div class="menuItem blog" data-goesTo="blog" data-delay="330">Blog</div>
         <div class="menuItem about" data-goesTo="about" data-delay="400">About / Contact</div>
+        <a href="https://github.com/andreas-trad/motorcortexjs" target="blank"><div class="menuItem download" data-goesTo="download" data-delay="470">Download on Github</div></a>
     </div>
+
+    <div class="side-about">
+        <small>
+        Copyright 2014, Andreas Trantidis <br/>
+        atrantidis at gmail dot com <br/>
+        Released under the <a href="http://sam.zoy.org/wtfpl/" target="_blank">WTFPL license</a><br/>
+        </small>
+    </div>
+
     <div class="mainContent">
         <div class="page"></div>
         <div class="contentLoader hdn"><img src="./images/loader2.gif"></div>
@@ -30,5 +43,4 @@
         <div>MotorCortex.js</div>
         <div><img src="./images/loader.gif"></div>
     </div>
-</body>
 </html>

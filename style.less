@@ -1,4 +1,9 @@
 body{
+  a:hover{
+    background-color: maroon;
+    color:#FFF;
+  }
+
   font-family: 'Nobile', Helvetica, Arial, sans-serif;
   font-size: 13px;
   line-height: 25px;
@@ -14,16 +19,34 @@ body{
   top:4px;
   left:11px;
   color:maroon;
+
+  h3{
+    margin-bottom: 2px;
+  }
+}
+
+.side-about{
+  bottom:-100px;
+  position: fixed;
+  color:maroon;
+  a{
+    color:maroon;
+    text-decoration: none;
+  }
 }
 
 .sidebar{
-  top:80px;
+  top:90px;
   width:300px;
   height: auto;
   float: left;
   margin-right: 4px;
   z-index: 2;
   position: fixed;
+
+  a{
+    text-decoration: none;
+  }
 
   .menuItem{
     background-color: #FFF;
@@ -41,6 +64,11 @@ body{
     -moz-transition: background 0.2s linear;    /* FF3.7+ */
     -o-transition: background 0.2s linear;      /* Opera 10.5 */
     -webkit-transition: background 0.2s linear; /* Saf3.2+, Chrome */
+
+    &.download{
+      background-color: maroon;
+      color:#FFF;
+    }
 
     &.selected{
       background-color: #009E9E;
@@ -184,6 +212,10 @@ body{
   padding-top: 20%;
   background-color: #FFF;
 
+  img{
+    margin-top: 10px;
+  }
+
   div{
     width: 100%;
     text-align: center;
@@ -289,17 +321,22 @@ body{
     }
 
     &.st5{
-      top:30px;
+      top:90px;
+      left:0;
+      opacity:0;
       font-size: 34px;
       color:#FFF;
     }
     &.st6{
-      top:80;
+      left:0;
+      opacity:0;
+      top:190px;
       font-size: 34px;
       color:#FFF;
 
       a{
         color:#FFF;
+        text-decoration: underline;
       }
     }
   }

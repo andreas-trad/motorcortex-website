@@ -4,6 +4,11 @@
     opacity:0;
 }
 
+.side-about:start{
+    bottom:10px;
+    duration:2000;
+}
+
 .menuItem:start{
     delay:500;
     scale:0;
@@ -297,7 +302,7 @@
         colorBlue:255;
         duration:300;
         complete{
-            delay:950;
+            delay:1250;
             opacity:0;
             duration:1000;
         }
@@ -311,12 +316,17 @@
     duration:0;
 
     .st5{
-        left:0;
+        opacity:1;
+        scale:1.2;
         duration:300;
+        easing:easeOutBack;
     }
     .st6{
-        left:0;
+        delay:1100;
+        opacity:1;
+        scale:1.2;
         duration:600;
+        easing:easeOutBack;
     }
 }
 

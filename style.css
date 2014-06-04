@@ -3,6 +3,10 @@ body {
   font-size: 13px;
   line-height: 25px;
 }
+body a:hover {
+  background-color: maroon;
+  color: #FFF;
+}
 body h3 {
   font-family: 'Corben', Georgia, Times, serif;
   font-size: 30px;
@@ -13,14 +17,29 @@ body h3 {
   left: 11px;
   color: maroon;
 }
+.logo h3 {
+  margin-bottom: 2px;
+}
+.side-about {
+  bottom: -100px;
+  position: fixed;
+  color: maroon;
+}
+.side-about a {
+  color: maroon;
+  text-decoration: none;
+}
 .sidebar {
-  top: 80px;
+  top: 90px;
   width: 300px;
   height: auto;
   float: left;
   margin-right: 4px;
   z-index: 2;
   position: fixed;
+}
+.sidebar a {
+  text-decoration: none;
 }
 .sidebar .menuItem {
   background-color: #FFF;
@@ -41,6 +60,10 @@ body h3 {
   /* Opera 10.5 */
   -webkit-transition: background 0.2s linear;
   /* Saf3.2+, Chrome */
+}
+.sidebar .menuItem.download {
+  background-color: maroon;
+  color: #FFF;
 }
 .sidebar .menuItem.selected {
   background-color: #009E9E;
@@ -161,6 +184,9 @@ body h3 {
   padding-top: 20%;
   background-color: #FFF;
 }
+#loader img {
+  margin-top: 10px;
+}
 #loader div {
   width: 100%;
   text-align: center;
@@ -252,17 +278,22 @@ body h3 {
   color: #FFF;
 }
 .banner .text.st5 {
-  top: 30px;
+  top: 90px;
+  left: 0;
+  opacity: 0;
   font-size: 34px;
   color: #FFF;
 }
 .banner .text.st6 {
-  top: 80;
+  left: 0;
+  opacity: 0;
+  top: 190px;
   font-size: 34px;
   color: #FFF;
 }
 .banner .text.st6 a {
   color: #FFF;
+  text-decoration: underline;
 }
 .banner .text1 {
   color: darkcyan;

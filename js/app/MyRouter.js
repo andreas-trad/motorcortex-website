@@ -32,6 +32,7 @@ define(
         };
 		
 		var applyTemplateToMainDiv = function(templateName, pageTitle, mc){
+            mc.trigger('aclick', {target:document.getElementsByClassName(templateName)});
             mc.trigger('fadeContentsOut');
 
 			document.title = 'MotorCortex.js | ' + pageTitle;
@@ -47,7 +48,7 @@ define(
 			return templateLoadResult.firsttime;
 		};
 
-        $('.menuItem').click(function(){
+        $('.menuItem:not(.download)').click(function(){
             window.location = '#' + $(this).attr('data-goesTo');
         });
 
@@ -61,7 +62,6 @@ define(
                                 Resetter.attachTo('.navbar-header');
 
                                 applyTemplateToMainDiv('home', 'Home', mc);
-                                mc.trigger('aclick', {target:document.getElementsByClassName('home')});
 
                                 applyBannerTemplateToDiv('homePage', 'banner');
                                 mc.trigger('animate');
@@ -70,20 +70,17 @@ define(
                                 Resetter.attachTo('.navbar-header');
 
                                 applyTemplateToMainDiv('concept', 'Concept', mc);
-                                mc.trigger('aclick', {target:document.getElementsByClassName('concept')});
 
                             }, // concept
                             'documentation':function(){
                                 Resetter.attachTo('.navbar-header');
 
-                                applyTemplateToMainDiv('readme', 'Documentation', mc);
-                                mc.trigger('aclick', {target:document.getElementsByClassName('documentation')});
+                                applyTemplateToMainDiv('documentation', 'Documentation', mc);
                             }, // documentation
                             'examples':function(){
                                 Resetter.attachTo('.navbar-header');
 
                                 applyTemplateToMainDiv('examples', 'Examples', mc);
-                                mc.trigger('aclick', {target:document.getElementsByClassName('examples')});
 
                                 $(".graphs.examplebutton").unbind().click(function(){
                                     applyExampleTemplateToDiv('graphs', 'graphsExample');
@@ -100,11 +97,15 @@ define(
                                     }
                                 });
                             }, // blog
-                            'about':function(){
+                            'blog':function(){
+                                Resetter.attachTo('.navbar-header');
 
+                                applyTemplateToMainDiv('blog', 'Blog', mc);
                             }, // about
-                            'contact':function(){
+                            'about':function(){
+                                Resetter.attachTo('.navbar-header');
 
+                                applyTemplateToMainDiv('about', 'About/Contact', mc);
                             } // contact
                         }); // routie
                     });
