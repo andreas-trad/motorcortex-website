@@ -1,6 +1,7 @@
 .banner:scaleBanner{
     duration:0;
     scale:@params.by;
+    left:@params.left;
 }
 
 #loader:start{

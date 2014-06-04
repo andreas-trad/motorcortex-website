@@ -7,15 +7,6 @@ define(
     ],
 	
 	function(TemplateLoader, Resetter, MotorCortex) {
-        mc.trigger('scaleBanner', {
-            by:800*0.9/$(window).width()
-        });
-        $(window).resize(function(){
-            mc.trigger('scaleBanner', {
-                by:800*0.9/$(window).width()
-            });
-        });
-
 		var checkCredentialsOnCallback = function(data){
 			if(data.credentialsError){
 				alert('Credentials error occured!');
@@ -66,9 +57,22 @@ define(
             window.location = '#' + $(this).attr('data-goesTo');
         });
 
+        var scaleBanner = function(mc){
+            if($(window).width() < 1155){
+                var newScale = $(window).width()*0.9/800;
+                var newLeft = ((1-$(window).width()*0.9/800)*800)/2;
+
+                mc.trigger('scaleBanner', {
+                    by:newScale,
+                    left:-newLeft
+                });
+            }
+        }
+
 		return {
 			init: function(){
                 var mc = new window.MotroCortex({debug:true});
+
                 mc.loadMSS('./mc.mss', function(){
                     mc.trigger('start', function(){
                         routie({
@@ -78,6 +82,7 @@ define(
                                 applyTemplateToMainDiv('home', 'Home', mc);
 
                                 applyBannerTemplateToDiv('homePage', 'banner');
+                                scaleBanner(mc);
                                 mc.trigger('animate');
                             }, // 'dashboard':function
                             'concept':function(){
