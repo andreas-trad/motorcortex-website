@@ -1,3 +1,6 @@
+#dummybodyid {
+  width: 100%;
+}
 body {
   overflow-x: hidden;
   font-family: 'Nobile', Helvetica, Arial, sans-serif;
