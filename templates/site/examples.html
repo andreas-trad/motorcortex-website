@@ -111,9 +111,15 @@ mc.loadMSS('./mc.mss', function(){
 <div class="exampleContainer graphsExample"></div>
 <div class="graphs examplebutton">Run</div>
 
-<h2>2. Menu items</h2>
+<h2>2. Menu items with Stop and Reverse</h2>
    <h3>HTML</h3>
 <pre class="html"><code>
+
+    &lt;button class=&quot;stop-button&quot;&gt;Stop&lt;/button&gt;
+    &lt;button class=&quot;reverse-button&quot;&gt;Reverse&lt;/button&gt;
+    &lt;button class=&quot;stop-reverse-button&quot;&gt;Stop and Reverse&lt;/button&gt;
+    &lt;button class=&quot;reverse-loop&quot;&gt;Reverse Loop&lt;/button&gt;
+
      &lt;div class=&quot;listContainer&quot;&gt;
         &lt;div class=&quot;listitem&quot; data-delay=&quot;75&quot;&gt;
             Lorem ipsum dolor sit amet, consectetur
@@ -151,8 +157,7 @@ mc.loadMSS('./mc.mss', function(){
 <h3>MSS</h3>
 <pre class="css"><code>
 .listContainer .listitem:not(triggeringElement):click{
-    -.:x-active;
-    duration:300;
+    duration:3000;
     delay:@domel.data-delay;
     opacity:0.5;
     scale:0.8;
@@ -160,14 +165,13 @@ mc.loadMSS('./mc.mss', function(){
     backgroundColorRed:245;
     backgroundColorGreen:245;
     backgroundColorBlue:245;
-    translateX:-@rand(240, 290)px;
+    translateX:-@rand(220, 240)px;
     boxShadowBlur:0em;
 }
 
 
 .listContainer .listitem:triggeringElement:click{
-    +.:x-active;
-    duration:300;
+    duration:3000;
     scale:1;
     opacity:1;
     easing:easeOutBack;
@@ -182,8 +186,7 @@ mc.loadMSS('./mc.mss', function(){
 }
 
 .listContainer .listitem:unclick{
-    -.:x-active;
-    duration:300;
+    duration:3000;
     scale:1;
     opacity:1;
     delay:@domel.data-delay;
@@ -194,6 +197,33 @@ mc.loadMSS('./mc.mss', function(){
     translateX:0px;
     boxShadowBlur:0em;
 }
+
+.listContainer .listitem:stop{
+    stop:true;
+}
+
+.listContainer .listitem:stop-and-reverse{
+    stop:true;
+}
+
+.listContainer .listitem:reverse{
+    reverse:true;
+    duration:3000;
+    delay:@domel.data-delay;
+}
+
+stop-and-reverse:callback{
+    eventName:reverse;
+}
+
+.listContainer .listitem:reverse-loop{
+    stop:true;
+    complete{
+        reverse:true;
+        duration:3000;
+        loop:100;
+    }
+}
 </code></pre>
 
 <h3>javascript</h3>
@@ -201,18 +231,43 @@ mc.loadMSS('./mc.mss', function(){
 var mc = new MotorCortex({
     debug:true
 });
-mc.loadMSS('./mc.mss', function(){
-    if(!$(this).hasClass('x-active')){
-        mc.trigger('click', e);
-    } else {
-        mc.trigger('unclick', e);
-    }
-
+var mc = new MotorCortex({
+    debug:true
 });
+mc.loadMSS('./mc.mss', function(){
+    $('.listitem').click(function(e){
+        if(!$(this).hasClass('active')){
+            $('.listitem').removeClass('active');
+            $(this).addClass('active');
+            mc.trigger('click', e);
+        } else {
+            $('.listitem').removeClass('active');
+            mc.trigger('unclick');
+        }
+    });
+    $('.stop-button').click(function(e){
+        mc.trigger('stop');
+    });
+    $('.reverse-button').click(function(e){
+        mc.trigger('reverse');
+    });
+    $('.stop-reverse-button').click(function(e){
+        mc.trigger('stop-and-reverse');
+    });
+    $('.reverse-loop').click(function(e){
+        mc.trigger('reverse-loop');
+    });
+});
+
 </code></pre>
 
 <h3>Result</h3>
 <div class="exampleContainer menuExample">
+    <button class="stop-button">Stop</button>
+    <button class="reverse-button">Reverse</button>
+    <button class="stop-reverse-button">Stop and Reverse</button>
+    <button class="reverse-loop">Reverse Loop</button>
+
     <div class="listContainer">
         <div class="listitem" data-delay="75">
             Lorem ipsum dolor sit amet, consectetur

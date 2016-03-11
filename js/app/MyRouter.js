@@ -71,7 +71,7 @@ define(
 
 		return {
 			init: function(){
-                var mc = new window.MotroCortex({debug:true});
+                var mc = new window.MotorCortex({debug:true});
 
                 mc.loadMSS('./mc.mss', function(){
                     mc.trigger('start', function(){
@@ -109,17 +109,44 @@ define(
                                 });
 
                                 $('.listitem').unbind().click(function(e){
-                                    if(!$(this).hasClass('x-active')){
+                                    if(!$(this).hasClass('active')){
+                                        $('.listitem').removeClass('active');
+                                        $(this).addClass('active');
                                         mc.trigger('click', e);
                                     } else {
-                                        mc.trigger('unclick', e);
+                                        $('.listitem').removeClass('active');
+                                        mc.trigger('unclick');
                                     }
                                 });
+                                $('.stop-button').unbind().click(function(e){
+                                    mc.trigger('stop');
+                                });
+                                $('.reverse-button').unbind().click(function(e){
+                                    mc.trigger('reverse');
+                                });
+                                $('.stop-reverse-button').unbind().click(function(e){
+                                    mc.trigger('stop-and-reverse');
+                                });
+                                $('.reverse-loop').unbind().click(function(e){
+                                    mc.trigger('reverse-loop');
+                                });
+
+                                //$('.listitem').unbind().click(function(e){
+                                //    if(!$(this).hasClass('x-active')){
+                                //        mc.trigger('click', e);
+                                //    } else {
+                                //        mc.trigger('unclick', e);
+                                //    }
+                                //});
                             }, // blog
                             'blog':function(){
                                 Resetter.attachTo('.navbar-header');
 
                                 applyTemplateToMainDiv('blog', 'Blog', mc);
+
+                                mc.loadMSS('./aris-banner.mss', function(){
+                                    mc.trigger("anim");
+                                });
                             }, // about
                             'about':function(){
                                 Resetter.attachTo('.navbar-header');
